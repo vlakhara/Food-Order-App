@@ -1,0 +1,43 @@
+.navbar {
+  height: auto;
+  max-height: 4rem;
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  padding: 2%;
+  align-items: center;
+  justify-content: space-around;
+}
+.left > .logo {
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+}
+.right {
+  height: 2.5rem;
+  width: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: bisque;
+  cursor: pointer;
+  border-radius: 12px;
+}
+.right > .cart {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cartNumber {
+  background: white;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px gray;
+}
