@@ -9,6 +9,25 @@ const defaultCart = {
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
     const newCart = state.items.concat(action.item);
+
+    // const newCart = state.items.map((item) => {
+    //   if (state.items.length !== 0 && item.id === action.item.id) {
+    //     return {
+    //       id: item.id,
+    //       title: item.title,
+    //       amount: item.amount + action.item.amount,
+    //       price: item.price,
+    //     };
+    //   }
+    //   return {
+    //     id: action.item.id,
+    //     title: action.item.title,
+    //     amount: action.item.amount,
+    //     price: action.item.price,
+    //   };
+    //});
+
+    console.log(newCart);
     const total = state.totalAmount + action.item.price * action.item.amount;
     return {
       items: newCart,
