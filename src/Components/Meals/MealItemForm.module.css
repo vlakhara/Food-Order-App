@@ -1,0 +1,33 @@
+.mealItemForm {
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.itemQnt {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  max-height: 2rem;
+  max-width: 3.5rem;
+  padding: 0.5rem;
+  padding-right: 0;
+  border-radius: 5px;
+  border: 0.5px solid rgba(128, 128, 128, 0.322);
+  outline: none;
+}
+
+.addBtn {
+  padding: 0.5rem;
+  height: 2rem;
+  width: 5rem;
+  border-radius: 5px;
+  border: none;
+  background: white;
+  box-shadow: 0px 0px 5px black;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}

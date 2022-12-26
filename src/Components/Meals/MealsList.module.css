@@ -1,0 +1,13 @@
+.mealsList {
+  height: auto;
+  width: 60%;
+  margin: 5rem auto;
+  padding: 1rem;
+  animation: come-over 1s ease-in-out;
+}
+@keyframes come-over {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+}

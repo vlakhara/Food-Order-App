@@ -1,0 +1,21 @@
+.meal {
+  height: auto;
+  width: 90%;
+  margin: 2rem auto;
+  padding-left: 0.5rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  border-bottom: 2px solid rgb(151, 151, 151);
+}
+.data {
+  height: 5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+}

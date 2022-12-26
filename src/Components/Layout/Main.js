@@ -2,10 +2,10 @@ import React, { Fragment } from "react";
 import Navbar from "./Navbar";
 import Header from "./Header";
 
-const Main = () => {
+const Main = (props) => {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar onShowCart={props.onCartOpen} />
       <Header />
     </Fragment>
   );

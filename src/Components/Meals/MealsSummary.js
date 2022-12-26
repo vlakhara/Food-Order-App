@@ -1,12 +1,13 @@
+import Card from "../UI/Card";
 import style from "./MealsSummary.module.css";
 const MealsSummary = () => {
   return (
-    <div className={style.text}>
+    <Card className={style.text} color="#FAEAB1">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, ipsa!
         Lorem ipsum dolor sit amet.
       </p>
-    </div>
+    </Card>
   );
 };
 export default MealsSummary;

@@ -1,13 +1,24 @@
-import { Fragment } from "react";
-import Main from "./Layout/Main";
-import MealsSummary from "./Meals/MealsSummary";
+import { useState } from "react";
+import Main from "./Components/Layout/Main";
+import MealsList from "./Components/Meals/MealsList";
+import Cart from "./Components/Cart/Cart";
+import CartProvider from "./Store/CartProvider";
 
 const App = () => {
+  const [cartIsOpen, setCartIsOpen] = useState(false);
+
+  const showCart = () => {
+    setCartIsOpen(true);
+  };
+  const hideCart = () => {
+    setCartIsOpen(false);
+  };
   return (
-    <Fragment>
-      <Main />
-      <MealsSummary />
-    </Fragment>
+    <CartProvider>
+      {cartIsOpen && <Cart onCartClose={hideCart} />}
+      <Main onCartOpen={showCart} />
+      <MealsList />
+    </CartProvider>
   );
 };
 

@@ -5,6 +5,7 @@
   z-index: 0;
 }
 .headerImage {
+  margin-top: 1rem;
   width: 110%;
   height: 100%;
   object-fit: cover;

@@ -12,4 +12,8 @@ html {
 
 body {
   margin: 0;
+  background-color: darkgrey;
+}
+::-webkit-scrollbar {
+  display: none;
 }
