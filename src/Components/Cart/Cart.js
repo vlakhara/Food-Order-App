@@ -6,15 +6,18 @@ import Model from "../UI/Model";
 const Cart = (props) => {
   const context = useContext(CartContext);
   const cartItems = context.items;
-  const totalAmount = context.totalAmount;
+  const totalAmount = context.items.reduce(
+    (current, next) => current + next.price,
+    0
+  );
   const cart = (
     <ul className={classes["cart-items"]}>
       {cartItems.map((item) => {
         return (
-          <React.Fragment>
-            <li key={item.id} className={classes.cartItem}>
+          <React.Fragment key={item.id}>
+            <li className={classes.cartItem}>
               {item.title}
-              <button>X</button>
+              <button onClick={() => context.removeItem(item)}>X</button>
             </li>
           </React.Fragment>
         );
