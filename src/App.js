@@ -3,6 +3,7 @@ import Main from "./Components/Layout/Main";
 import MealsList from "./Components/Meals/MealsList";
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./Store/CartProvider";
+import style from "./App.module.css";
 
 const App = () => {
   const [cartIsOpen, setCartIsOpen] = useState(false);

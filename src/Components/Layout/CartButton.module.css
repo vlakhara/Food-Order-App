@@ -32,3 +32,25 @@
   box-shadow: 0px 0px 5px gray;
   color: #faf8f1;
 }
+
+.bump {
+  animation: Bump 300ms ease-out;
+}
+
+@keyframes Bump {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
