@@ -7,27 +7,21 @@ const defaultCart = {
 };
 
 const cartReducer = (state, action) => {
+  let newCart = [...state.items];
   if (action.type === "ADD") {
-    const newCart = state.items.concat(action.item);
+    if (newCart.find((item) => item.id === action.item.id)) {
+      newCart.forEach((item) => {
+        if (item.id === action.item.id) {
+          item.id = item.id;
+          item.title = item.title;
+          item.amount += action.item.amount;
+          item.price = item.price;
+        }
+      });
+    } else {
+      newCart = [...newCart, action.item];
+    }
 
-    // const newCart = state.items.map((item) => {
-    //   if (state.items.length !== 0 && item.id === action.item.id) {
-    //     return {
-    //       id: item.id,
-    //       title: item.title,
-    //       amount: item.amount + action.item.amount,
-    //       price: item.price,
-    //     };
-    //   }
-    //   return {
-    //     id: action.item.id,
-    //     title: action.item.title,
-    //     amount: action.item.amount,
-    //     price: action.item.price,
-    //   };
-    //});
-
-    console.log(newCart);
     const total = state.totalAmount + action.item.price * action.item.amount;
     return {
       items: newCart,
@@ -35,12 +29,25 @@ const cartReducer = (state, action) => {
     };
   }
   if (action.type === "REMOVE") {
-    const total = state.totalAmount - action.item.price * action.item.amount;
-    const newCart = state.items.filter((item) => item.id !== action.item.id);
+    const existingItemIndex = state.items.findIndex(
+      (item) => item.id === action.item.id
+    );
+    const existingItem = state.items[existingItemIndex];
+    let newTotalAmount = state.totalAmount - existingItem.price;
+    if (existingItem.amount === 1) {
+      newTotalAmount =
+        state.totalAmount - action.item.price * action.item.amount;
+      newCart = state.items.filter((item) => item.id !== action.item.id);
+    } else {
+      newCart[existingItemIndex] = {
+        ...existingItem,
+        amount: existingItem.amount - 1,
+      };
+    }
 
     return {
       items: newCart,
-      totalAmount: total,
+      totalAmount: newTotalAmount,
     };
   }
 
@@ -69,5 +76,4 @@ const CartProvider = (props) => {
     </CartContext.Provider>
   );
 };
-
 export default CartProvider;

@@ -1,21 +1,32 @@
 import style from "./CartButton.module.css";
 import CartIcon from "../Cart/CartIcon";
 import CartContext from "../../Store/CartContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const CartButton = (props) => {
   const context = useContext(CartContext);
+  const { items } = context;
+  const totalItems = items.reduce((total, meal) => total + meal.amount, 0);
+  const [btnActive, setBtnActive] = useState(false);
+  const classes = `${style.cartButton} ${btnActive ? style.bump : ""}`;
 
-  const totalItems = context.items.reduce((current, item) => {
-    return current + item.amount;
-  }, 0);
+  useEffect(() => {
+    if (items.length === 0) {
+      return;
+    }
+    setBtnActive(true);
+
+    const bumpTimer = setTimeout(() => {
+      setBtnActive(false);
+    }, 300);
+
+    return () => {
+      clearTimeout(bumpTimer);
+    };
+  }, [items]);
 
   return (
-    <button
-      className={style.cartButton}
-      color="#e5ba73"
-      onClick={props.onClick}
-    >
+    <button className={classes} color="#e5ba73" onClick={props.onClick}>
       <div className={style.cart}>
         <div className={style.cartIcon}>
           <CartIcon />
