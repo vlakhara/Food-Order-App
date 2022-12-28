@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import CartContext from "../../Store/CartContext";
 import classes from "./Cart.module.css";
 import Model from "../UI/Model";
@@ -6,11 +6,7 @@ import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const context = useContext(CartContext);
-  const [cartItems, setCartItems] = useState([]);
-
-  useEffect(() => {
-    setCartItems([...context.items]);
-  }, [context]);
+  const { items } = context;
 
   const onOrderComplete = () => {
     console.log("Ordering...");
@@ -23,9 +19,9 @@ const Cart = (props) => {
   const addMealHandler = (item) => {
     context.addNewItem({ ...item, amount: 1 });
   };
-  const hasItem = cartItems.length > 0;
+  const hasItem = items.length > 0;
 
-  const totalAmount = cartItems.reduce(
+  const totalAmount = items.reduce(
     (current, next) => current + next.price * next.amount,
     0
   );
@@ -33,7 +29,7 @@ const Cart = (props) => {
   return (
     <Model onClose={props.onCartClose}>
       <ul className={classes["cart-items"]}>
-        {cartItems.map((item, i) => {
+        {items.map((item, i) => {
           return (
             <CartItem
               key={`${item.id}_${i}`}
