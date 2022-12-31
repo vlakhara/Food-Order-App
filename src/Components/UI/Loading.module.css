@@ -13,7 +13,7 @@
 }
 
 .dot {
-  --dot: 1.9rem;
+  --dot: 1rem;
   background: radial-gradient(
     circle at 50% calc(5rem + 2px),
     var(--w) var(--dot),
@@ -42,42 +42,42 @@
 }
 
 .dot:nth-child(2) {
-  --dot: 1.7rem;
+  --dot: 0.9rem;
   animation-delay: 0.05s;
 }
 
 .dot:nth-child(3) {
-  --dot: 1.5rem;
+  --dot: 0.8rem;
   animation-delay: 0.1s;
 }
 
 .dot:nth-child(4) {
-  --dot: 1.3rem;
+  --dot: 0.7rem;
   animation-delay: 0.15s;
 }
 
 .dot:nth-child(5) {
-  --dot: 1.1rem;
+  --dot: 0.6rem;
   animation-delay: 0.2s;
 }
 
 .dot:nth-child(6) {
-  --dot: 0.9rem;
+  --dot: 0.5rem;
   animation-delay: 0.25s;
 }
 
 .dot:nth-child(7) {
-  --dot: 0.7rem;
+  --dot: 0.4rem;
   animation-delay: 0.3s;
 }
 
 .dot:nth-child(8) {
-  --dot: 0.5rem;
+  --dot: 0.3rem;
   animation-delay: 0.35s;
 }
 
 .dot:nth-child(9) {
-  --dot: 0.3rem;
+  --dot: 0.2rem;
   animation-delay: 0.4s;
 }
 
