@@ -12,10 +12,10 @@ const cartReducer = (state, action) => {
     if (newCart.find((item) => item.id === action.item.id)) {
       newCart.forEach((item) => {
         if (item.id === action.item.id) {
-          item.id = item.id;
-          item.title = item.title;
+          item.id = action.item.id;
+          item.title = action.item.title;
           item.amount += action.item.amount;
-          item.price = item.price;
+          item.price = action.item.price;
         }
       });
     } else {

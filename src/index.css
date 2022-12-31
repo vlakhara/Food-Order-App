@@ -8,11 +8,11 @@
 
 html {
   font-family: "Noto Sans JP", sans-serif;
+  background-color: #c58940;
 }
 
 body {
   margin: 0;
-  background-color: darkgrey;
 }
 ::-webkit-scrollbar {
   display: none;

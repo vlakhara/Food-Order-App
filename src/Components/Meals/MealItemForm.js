@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import style from "./MealItemForm.module.css";
 
 const MealItemForm = (props) => {
