@@ -8,8 +8,8 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 20%;
-  left: 25%;
+  top: 30%;
+  left: 30%;
 }
 
 .dot {
@@ -20,8 +20,8 @@
     #fff0 calc(var(--dot) + 2px)
   );
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   animation: spin 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0s infinite;
 }
 
