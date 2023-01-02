@@ -9,6 +9,9 @@
   height: 100vh;
   position: fixed;
   top: 50%;
+  height: 100%;
+  position: absolute;
+  top: 30%;
   left: 30%;
 }
 
