@@ -1,47 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../UI/Card";
 import style from "./MealsList.module.css";
 import Meal from "./Meal";
 import MealsSummary from "./MealsSummary";
-const menuList = [
-  {
-    id: "m1",
-    title: "Pizza",
-    price: 250,
-    desc: "Good pizza",
-  },
-  {
-    id: "m2",
-    title: "Burger",
-    price: 100,
-    desc: "Good burger",
-  },
-  {
-    id: "m3",
-    title: "Frankie",
-    price: 80,
-    desc: "Good frankie",
-  },
-  {
-    id: "m4",
-    title: "Dosa",
-    price: 60,
-    desc: "Good Dosa",
-  },
-  {
-    id: "m5",
-    title: "Idli",
-    price: 50,
-    desc: "Good idli",
-  },
-];
 
 const MealsList = () => {
+  const [meals, setMeals] = useState([]);
+  useEffect(() => {
+    const tempMeals = [];
+    const fetchMeals = async () => {
+      const response = await fetch(
+        "https://food-order-app-c6f36-default-rtdb.firebaseio.com/meals.json"
+      );
+      const data = await response.json();
+      for (const key in data) {
+        const meal = {
+          id: key,
+          title: data[key].title,
+          desc: data[key].desc,
+          price: data[key].price,
+        };
+        setMeals((prevMeals) => [...prevMeals, meal]);
+      }
+    };
+    fetchMeals();
+  }, []);
+
   return (
     <React.Fragment>
       <MealsSummary />
       <Card className={style.mealsList} color="#FAEAB1">
-        {menuList.map((item) => (
+        {meals.map((item) => (
           <Meal key={item.id} meal={item} />
         ))}
       </Card>
