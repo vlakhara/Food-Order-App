@@ -7,7 +7,6 @@ import Loading from "./Components/UI/Loading";
 
 const App = () => {
   const [cartIsOpen, setCartIsOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const showCart = () => {
     setCartIsOpen(true);
@@ -16,18 +15,11 @@ const App = () => {
     setCartIsOpen(false);
   };
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-  }, []);
-
   return (
     <CartProvider>
       {cartIsOpen && <Cart onCartClose={hideCart} />}
-      {!isLoading && <Main onCartOpen={showCart} />}
-      {!isLoading && <MealsList />}
-      {isLoading && <Loading />}
+      <Main onCartOpen={showCart} />
+      <MealsList />
     </CartProvider>
   );
 };

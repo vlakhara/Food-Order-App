@@ -6,11 +6,13 @@
   margin: -5rem auto;
   margin-bottom: 5rem;
   display: flex;
-  animation: come-over 1s ease-in-out;
+  animation: show 1s ease-in-out;
 }
-@keyframes come-over {
+@keyframes show {
   from {
     opacity: 0;
-    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
   }
 }

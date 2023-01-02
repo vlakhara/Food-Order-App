@@ -1,24 +1,30 @@
-.cart-items {
-  list-style: none;
-  max-height: 20rem;
+.checkout {
+  height: auto;
+  width: 95%;
+  margin: 0rem auto;
+  padding: 1rem;
   overflow: scroll;
-  width: 100%;
-  margin: 1rem auto;
 }
 
-.total {
-  height: 5rem;
-  width: 95%;
-  margin: 0.1rem auto;
-  padding: 1rem;
-  padding-right: 2.3rem;
+.formControls {
+  height: 9rem;
+  width: 100%;
+}
+.inputGroup {
+  width: 50%;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.2rem;
-  font-weight: 800;
 }
 
+.inputGroup > label {
+  font-weight: 700;
+}
+.inputGroup > input {
+  padding: 5px;
+  outline: none;
+}
 .actions {
   width: 90%;
   text-align: right;
