@@ -13,6 +13,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #c58940;
 }
 ::-webkit-scrollbar {
   display: none;
